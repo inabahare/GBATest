@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "name": "(gdb) debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "gdb-debug",
+      "cwd": "${workspaceFolder}",
+      "postDebugTask": "stop emulation",
+      "program": "${workspaceFolder}/HelloWorld.elf",
+      "serverLaunchTimeout": 10000,
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "targetArchitecture": "arm",
+      "miDebuggerServerAddress": "localhost:2345",
+      "miDebuggerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "ignoreFailures": true,
+          "text": "file ${workspaceFolder}/HelloWorld.elf --enable-pretty-printing"
+        }
+      ]
+    }
+  ]
+}

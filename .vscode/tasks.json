@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "stop emulation",
+      "type": "shell",
+      "linux": {
+        "command": "killall mgba-qt"
+      }
+    },
+    {
+      "label": "make Debug",
+      "type": "process",
+      "command": "make",
+      "args": ["DEBUG=1"]
+    },
+    {
+      "label": "gdb-debug",
+      "type": "shell", 
+      "dependsOn": ["make Debug"],
+      "isBackground": false,
+      "linux": {
+        "command": "mgba-qt",
+        "args": ["-g", "${workspaceFolder}/HelloWorld.gba"]
+      },
+      "presentation": {
+        "clear": true,
+        "reveal": "always",
+      }
+    }
+  ]
+}
