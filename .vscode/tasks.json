@@ -10,9 +10,13 @@
     },
     {
       "label": "make Debug",
-      "type": "process",
+      "type": "shell",
       "command": "make",
-      "args": ["DEBUG=1"]
+      "args": ["DEBUG=1"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "label": "gdb-debug",

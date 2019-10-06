@@ -2,14 +2,14 @@
   "version": "2.0.0",
   "configurations": [
     {
-      "name": "(gdb) debug",
+      "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
       "preLaunchTask": "gdb-debug",
       "cwd": "${workspaceFolder}",
       "postDebugTask": "stop emulation",
       "program": "${workspaceFolder}/HelloWorld.elf",
-      "serverLaunchTimeout": 10000,
+      "serverLaunchTimeout": 1000,
       "MIMode": "gdb",
       "externalConsole": true,
       "targetArchitecture": "arm",
