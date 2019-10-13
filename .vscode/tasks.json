@@ -4,15 +4,27 @@
     {
       "label": "stop emulation",
       "type": "shell",
-      "linux": {
-        "command": "killall mgba-qt"
-      }
+      "command": "killall mgba-qt"
+    },
+    {
+      "label": "make",
+      "type": "shell",
+      "command": "make",
     },
     {
       "label": "make Debug",
       "type": "shell",
       "command": "make",
       "args": ["DEBUG=1"],
+    },
+    {
+      "label": "run",
+      "type": "shell",
+      "dependsOn": ["make Debug"],
+      "linux": {
+        "command": "mgba-qt",
+        "args": ["${workspaceFolder}/HelloWorld.gba"]
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -25,7 +37,7 @@
       "isBackground": false,
       "linux": {
         "command": "mgba-qt",
-        "args": ["-g", "${workspaceFolder}/HelloWorld.gba"]
+        "args": ["-g", "${workspaceFolder}/HelloWorld.elf"]
       },
       "presentation": {
         "clear": true,

@@ -19,7 +19,7 @@
         {
           "description": "Enable pretty-printing for gdb",
           "ignoreFailures": true,
-          "text": "file ${workspaceFolder}/HelloWorld.elf --enable-pretty-printing"
+          "text": "file ${workspaceFolder}/HelloWorld.elf"
         }
       ]
     }
